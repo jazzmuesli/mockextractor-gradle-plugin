@@ -14,6 +14,7 @@ import org.gradle.api.tasks.TaskAction;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,8 @@ public class MockExtractorTask extends DefaultTask {
 	@TaskAction
 	void processDirectories() {
 		SourceSetContainer sourceSets = project.getConvention().getPlugin(JavaPluginConvention.class).getSourceSets();
-		List<String> deps = getDependencies();
+//		TODO: List<String> deps = getDependencies();
+		List<String> deps = Collections.emptyList();
 		for (Map.Entry<String, SourceSet> entry : sourceSets.getAsMap().entrySet()) {
 			SourceSet sourceSet = entry.getValue();
 			Set<File> srcDirs = sourceSet.getAllJava().getSrcDirs();

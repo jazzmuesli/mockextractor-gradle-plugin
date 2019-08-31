@@ -2,7 +2,9 @@
 Gradle plugin to detect mocks using https://github.com/ishepard/MockExtractor
 
 # How to build it:
-    ./gradlew install
+	git clone https://github.com/ishepard/MockExtractor
+	cd MockExtractor && mvn install
+	cd ../mockextractor-gradle-plugin && ./gradlew install
 
 # How to use it:
 
